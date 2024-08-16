@@ -7,7 +7,10 @@
     "pause": "Pause",
     "stop": "Stop",
     "settings": "Settings",
+    "textToSpeechSource": "Text To Speech Source",
     "textToSpeechEngine": "Text To Speech Engine",
+    "ok": "Ok",
     "save": "Save",
-    "cancel": "Cancel"
+    "cancel": "Cancel",
+    "done": "Done"
 }

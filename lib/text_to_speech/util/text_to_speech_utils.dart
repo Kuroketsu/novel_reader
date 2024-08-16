@@ -1,8 +1,7 @@
 class TextToSpeechUtils {
-  static const ttsMaxLength = 2048;
 
-  static List<String> textToParts(String text) {
-    if (text.length <= ttsMaxLength) {
+  static List<String> textToParts(String text, {int maxLength = 2048}) {
+    if (text.length <= maxLength) {
       return [text];
     }
 
@@ -12,9 +11,10 @@ class TextToSpeechUtils {
 
     for (var i = 0; i < paragraphs.length; i++) {
       final paragraph = paragraphs[i];
-      if (paragraph.trim().isNotEmpty && paragraph.length <= ttsMaxLength) {
+      if (paragraph.trim().isNotEmpty &&
+          paragraph.length <= maxLength) {
         if ((paragraphGroup.join('\n').length + paragraph.length) <=
-            ttsMaxLength) {
+            maxLength) {
           paragraphGroup.add(paragraph);
           if (i == paragraphs.length - 1) {
             parts.add(paragraphGroup.join('\n'));
@@ -29,9 +29,10 @@ class TextToSpeechUtils {
         final sentenceGroup = List<String>.empty(growable: true);
         final sentences = paragraph.split('.');
         for (final sentence in sentences) {
-          if (sentence.trim().isNotEmpty && sentence.length <= ttsMaxLength) {
+          if (sentence.trim().isNotEmpty &&
+              sentence.length <= maxLength) {
             if ((sentenceGroup.join('. ').length + sentence.length) <=
-                ttsMaxLength) {
+                maxLength) {
               sentenceGroup.add(sentence);
             } else {
               parts.add(sentenceGroup.join('. '));
@@ -47,4 +48,6 @@ class TextToSpeechUtils {
   }
 }
 
-enum TextToSpeechEngine { device, flowery }
+enum TtsSource { native, flowery }
+
+enum TtsState { playing, stopped, paused, continued }

@@ -13,18 +13,19 @@ class GlobalThemData {
   static ThemeData themeData(ColorScheme colorScheme, Color focusColor) {
     return ThemeData(
       colorScheme: colorScheme,
-      canvasColor: colorScheme.surface,
+      canvasColor: colorScheme.primary,
       scaffoldBackgroundColor: colorScheme.surface,
       highlightColor: Colors.transparent,
       focusColor: focusColor,
+      dividerColor: colorScheme.onSurface,
       fontFamily: 'Roboto',
     );
   }
 
   static const ColorScheme lightColorScheme = ColorScheme(
-    primary: ColorName.accentColorDark,
-    secondary: ColorName.accentColor,
-    surface: ColorName.accentColor,
+    primary: ColorName.primaryColorDark,
+    secondary: ColorName.primaryColorDark,
+    surface: ColorName.primaryColor,
     error: Colors.redAccent,
     onError: Colors.white,
     onPrimary: Colors.black,
