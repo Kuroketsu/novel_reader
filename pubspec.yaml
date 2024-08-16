@@ -1,27 +1,64 @@
 name: novel_reader
 description: My novel reader flutter app
-version: 1.0.0+1
+version: 0.0.1+1
 publish_to: none
 
 environment:
   sdk: ^3.4.0
 
 dependencies:
+  assets_audio_player: ^3.1.1
+  auto_route: ^9.2.0
   bloc: ^8.1.4
+  dio: ^5.6.0
+  firebase_core: ^3.3.0
+  firebase_crashlytics: ^4.0.4
+  flowery_tts:
+    git:
+      url: https://github.com/Kuroketsu/flowery-tts.git
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
   flutter_localizations:
     sdk: flutter
+  flutter_tts: ^4.0.2
+  http: ^1.2.2
   intl: ^0.19.0
+  path_provider: ^2.1.4
+  scroll_highlight_text: ^0.1.4
+  shared_preferences: ^2.3.2
 
 dev_dependencies:
+  auto_route_generator: ^9.0.0
   bloc_test: ^9.1.7
+  build_runner: ^2.4.12
+  flutter_gen_runner: ^5.6.0
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.4.0
   flutter_test:
     sdk: flutter
   mocktail: ^1.0.4
   very_good_analysis: ^6.0.0
 
+flutter_gen:
+  colors:
+    inputs:
+      - assets/colors/colors.xml
+
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/google_fonts/
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/google_fonts/Roboto-Regular.ttf
+        - asset: assets/google_fonts/Roboto-Medium.ttf
+          weight: 500
+        - asset: assets/google_fonts/Roboto-Bold.ttf
+          weight: 700
+        - asset: assets/google_fonts/Roboto-Black.ttf
+          weight: 900

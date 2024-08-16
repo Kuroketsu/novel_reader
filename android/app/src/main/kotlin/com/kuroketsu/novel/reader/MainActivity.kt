@@ -1,4 +1,4 @@
-package com.kuroketsu.novel_reader
+package com.kuroketsu.novel.reader
 
 import io.flutter.embedding.android.FlutterActivity
 

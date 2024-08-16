@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "597536217280",
+    "project_id": "novel-reader-15674",
+    "storage_bucket": "novel-reader-15674.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:597536217280:android:6ca8ee85cab91a56803525",
+        "android_client_info": {
+          "package_name": "com.kuroketsu.novel.reader"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiDttJ7nw5VDbpNH7UdKyfZpdAJjtmFkA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:597536217280:android:cc3ca59fbc13b5bb803525",
+        "android_client_info": {
+          "package_name": "com.kuroketsu.novel.reader.dev"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiDttJ7nw5VDbpNH7UdKyfZpdAJjtmFkA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

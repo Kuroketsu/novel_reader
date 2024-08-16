@@ -1,7 +1,13 @@
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Counter",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
-    }
+    "appTitle": "Novel Reader",
+    "clear": "Clear",
+    "paste": "Paste",
+    "play": "Play",
+    "pause": "Pause",
+    "stop": "Stop",
+    "settings": "Settings",
+    "textToSpeechEngine": "Text To Speech Engine",
+    "save": "Save",
+    "cancel": "Cancel"
 }

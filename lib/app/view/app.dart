@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:novel_reader/counter/counter.dart';
+import 'package:novel_reader/app/router/app_router.dart';
+import 'package:novel_reader/app/theme/global_theme.dart';
 import 'package:novel_reader/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -7,16 +8,15 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        appBarTheme: AppBarTheme(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        ),
-        useMaterial3: true,
-      ),
+    return MaterialApp.router(
+      title: 'Novel Reader',
+      themeMode: ThemeMode.dark,
+      theme: GlobalThemData.lightThemeData,
+      darkTheme: GlobalThemData.darkThemeData,
+      debugShowCheckedModeBanner: false,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+      routerConfig: AppRouter().config(),
     );
   }
 }
