@@ -6,7 +6,6 @@ import 'package:novel_reader/gen/colors.gen.dart';
 import 'package:novel_reader/l10n/l10n.dart';
 import 'package:novel_reader/text_to_speech/bloc/text_to_speech_cubit.dart';
 import 'package:novel_reader/text_to_speech/util/text_to_speech_utils.dart';
-import 'package:scroll_highlight_text/scroll_highlight_text.dart';
 import 'package:search_highlight_text/search_highlight_text.dart';
 
 @RoutePage()
