@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:novel_reader/common/helper/helpers.dart';
+import 'package:novel_reader/common/helpers/helpers.dart';
+import 'package:novel_reader/features/text_to_speech/blocs/text_to_speech_cubit.dart';
+import 'package:novel_reader/features/text_to_speech/utils/text_to_speech_utils.dart';
 import 'package:novel_reader/gen/colors.gen.dart';
 import 'package:novel_reader/l10n/l10n.dart';
-import 'package:novel_reader/features/text_to_speech/bloc/text_to_speech_cubit.dart';
-import 'package:novel_reader/features/text_to_speech/util/text_to_speech_utils.dart';
 import 'package:search_highlight_text/search_highlight_text.dart';
 
 @RoutePage()
