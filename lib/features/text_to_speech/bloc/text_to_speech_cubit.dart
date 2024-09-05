@@ -8,7 +8,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_tts/flutter_tts.dart';
-import 'package:novel_reader/text_to_speech/util/text_to_speech_utils.dart';
+import 'package:novel_reader/features/text_to_speech/util/text_to_speech_utils.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:toastification/toastification.dart';
 

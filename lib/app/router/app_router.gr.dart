@@ -10,7 +10,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i3;
 import 'package:novel_reader/common/view/home.dart' as _i1;
-import 'package:novel_reader/text_to_speech/view/text_to_speech_page.dart'
+import 'package:novel_reader/features/text_to_speech/view/text_to_speech_page.dart'
     as _i2;
 
 /// generated route for
