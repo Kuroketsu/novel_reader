@@ -1,3 +1,4 @@
+// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -17,10 +18,7 @@ import 'package:novel_reader/features/text_to_speech/views/text_to_speech_page.d
 /// [_i1.HomePage]
 class HomeRoute extends _i3.PageRouteInfo<void> {
   const HomeRoute({List<_i3.PageRouteInfo>? children})
-      : super(
-          HomeRoute.name,
-          initialChildren: children,
-        );
+    : super(HomeRoute.name, initialChildren: children);
 
   static const String name = 'HomeRoute';
 
@@ -36,10 +34,7 @@ class HomeRoute extends _i3.PageRouteInfo<void> {
 /// [_i2.TextToSpeechPage]
 class TextToSpeechRoute extends _i3.PageRouteInfo<void> {
   const TextToSpeechRoute({List<_i3.PageRouteInfo>? children})
-      : super(
-          TextToSpeechRoute.name,
-          initialChildren: children,
-        );
+    : super(TextToSpeechRoute.name, initialChildren: children);
 
   static const String name = 'TextToSpeechRoute';
 

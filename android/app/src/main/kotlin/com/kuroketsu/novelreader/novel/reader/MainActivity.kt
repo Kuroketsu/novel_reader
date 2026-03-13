@@ -1,0 +1,5 @@
+package com.kuroketsu.novelreader.novel_reader
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity : FlutterActivity()

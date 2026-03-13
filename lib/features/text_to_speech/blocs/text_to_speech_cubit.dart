@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flowery_tts/flowery_tts.dart';
@@ -20,7 +19,7 @@ class TextToSpeechCubit extends Cubit<TextToSpeechState> {
         flowery = const Flowery(
           userAgent: 'Kuroketsu/Novel Reader/1.0.0',
         ),
-        assetsAudioPlayer = AssetsAudioPlayer(),
+        // assetsAudioPlayer = AssetsAudioPlayer(),
         super(const TextToSpeechState()) {
     initTts();
   }
@@ -35,7 +34,7 @@ class TextToSpeechCubit extends Cubit<TextToSpeechState> {
 
   final Flowery flowery;
 
-  final AssetsAudioPlayer assetsAudioPlayer;
+  // final AssetsAudioPlayer assetsAudioPlayer;
 
   void initTts() {
     _setAwaitOptions();
@@ -118,24 +117,24 @@ class TextToSpeechCubit extends Cubit<TextToSpeechState> {
         return;
       }
 
-      final playlist = await _getPlaylist(audioFiles);
+      // final playlist = await _getPlaylist(audioFiles);
 
-      await assetsAudioPlayer.open(playlist);
-      await assetsAudioPlayer.play();
+      // await assetsAudioPlayer.open(playlist);
+      // await assetsAudioPlayer.play();
 
       emit(state.copyWith(ttsState: TtsState.playing));
 
-      assetsAudioPlayer.current.listen((Playing? playing) {
-        final path = playing!.audio.assetAudioPath;
-        final index = audioFiles.indexOf(path);
-        emit(
-          state.copyWith(
-            currentPartIndex: index,
-            currentPart: parts[index],
-            progress: (state.currentPartIndex + 1) / state.parts.length,
-          ),
-        );
-      });
+      // assetsAudioPlayer.current.listen((Playing? playing) {
+      //   final path = playing!.audio.assetAudioPath;
+      //   final index = audioFiles.indexOf(path);
+      //   emit(
+      //     state.copyWith(
+      //       currentPartIndex: index,
+      //       currentPart: parts[index],
+      //       progress: (state.currentPartIndex + 1) / state.parts.length,
+      //     ),
+      //   );
+      // });
     } else {
       await flutterTts.setVolume(state.volume);
       await flutterTts.setSpeechRate(state.rate);
@@ -176,7 +175,7 @@ class TextToSpeechCubit extends Cubit<TextToSpeechState> {
 
   Future<void> stop() async {
     if (state.ttsSource == TtsSource.flowery) {
-      await assetsAudioPlayer.stop();
+      // await assetsAudioPlayer.stop();
       emit(state.copyWith(ttsState: TtsState.stopped));
     } else {
       final result = await flutterTts.stop();
@@ -186,7 +185,7 @@ class TextToSpeechCubit extends Cubit<TextToSpeechState> {
 
   Future<void> pause() async {
     if (state.ttsSource == TtsSource.flowery) {
-      await assetsAudioPlayer.pause();
+      // await assetsAudioPlayer.pause();
       emit(state.copyWith(ttsState: TtsState.paused));
     } else {
       final result = await flutterTts.pause();
@@ -241,14 +240,14 @@ class TextToSpeechCubit extends Cubit<TextToSpeechState> {
     return audioFiles;
   }
 
-  Future<Playlist> _getPlaylist(List<String> audioFiles) async {
-    final playlist = Playlist(
-      audios: [
-        for (final audioFile in audioFiles) Audio.file(audioFile),
-      ],
-    );
-    return playlist;
-  }
+  // Future<Playlist> _getPlaylist(List<String> audioFiles) async {
+  //   final playlist = Playlist(
+  //     audios: [
+  //       for (final audioFile in audioFiles) Audio.file(audioFile),
+  //     ],
+  //   );
+  //   return playlist;
+  // }
 
   Future<String> getClipboardText() async {
     final clipboardData = await Clipboard.getData(Clipboard.kTextPlain);
