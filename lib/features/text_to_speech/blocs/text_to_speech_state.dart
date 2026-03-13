@@ -54,20 +54,20 @@ class TextToSpeechState extends Equatable {
 
   @override
   List<Object?> get props => [
-        textInput,
-        parts,
-        currentPart,
-        currentPartIndex,
-        ttsSource,
-        ttsEngine,
-        language,
-        volume,
-        pitch,
-        rate,
-        progress,
-        ttsState,
-        isCurrentLanguageInstalled,
-      ];
+    textInput,
+    parts,
+    currentPart,
+    currentPartIndex,
+    ttsSource,
+    ttsEngine,
+    language,
+    volume,
+    pitch,
+    rate,
+    progress,
+    ttsState,
+    isCurrentLanguageInstalled,
+  ];
 
   TextToSpeechState copyWith({
     String? textInput,

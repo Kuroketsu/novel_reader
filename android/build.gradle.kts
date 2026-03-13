@@ -13,6 +13,18 @@ val newBuildDir: Directory =
 rootProject.layout.buildDirectory.value(newBuildDir)
 
 subprojects {
+    afterEvaluate {
+        if (hasProperty("android")) {
+            (this as ExtensionAware).extensions.configure<com.android.build.gradle.BaseExtension>("android") {
+                if (namespace == null) {
+                    namespace = group.toString()
+                }
+            }
+        }
+    }
+}
+
+subprojects {
     val newSubprojectBuildDir: Directory = newBuildDir.dir(project.name)
     project.layout.buildDirectory.value(newSubprojectBuildDir)
 }

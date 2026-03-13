@@ -7,16 +7,20 @@ import 'package:novel_reader/app/router/app_router.gr.dart';
 class AppRouter extends RootStackRouter {
   @override
   List<AutoRoute> get routes => [
+    AutoRoute(
+      path: '/',
+      page: HomeRoute.page,
+      children: [
         AutoRoute(
-          path: '/',
-          page: HomeRoute.page,
-          children: [
-            AutoRoute(
-              path: 'text_to_speech',
-              page: TextToSpeechRoute.page,
-              initial: true,
-            ),
-          ],
+          path: 'browser',
+          page: BrowserRoute.page,
+          initial: true,
         ),
-      ];
+        AutoRoute(
+          path: 'text_to_speech',
+          page: TextToSpeechRoute.page,
+        ),
+      ],
+    ),
+  ];
 }

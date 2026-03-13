@@ -3,7 +3,10 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:flutter_inappwebview_android/flutter_inappwebview_android.dart';
 import 'package:novel_reader/firebase_options.dart';
 
 class AppBlocObserver extends BlocObserver {
@@ -30,6 +33,11 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   Bloc.observer = const AppBlocObserver();
 
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize InAppWebView platform
+  if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
+    InAppWebViewPlatform.instance = AndroidInAppWebViewPlatform();
+  }
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,

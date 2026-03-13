@@ -1,5 +1,4 @@
 class TextToSpeechUtils {
-
   static List<String> textToParts(String text, {int maxLength = 2048}) {
     if (text.length <= maxLength) {
       return [text];
@@ -11,8 +10,7 @@ class TextToSpeechUtils {
 
     for (var i = 0; i < paragraphs.length; i++) {
       final paragraph = paragraphs[i];
-      if (paragraph.trim().isNotEmpty &&
-          paragraph.length <= maxLength) {
+      if (paragraph.trim().isNotEmpty && paragraph.length <= maxLength) {
         if ((paragraphGroup.join('\n').length + paragraph.length) <=
             maxLength) {
           paragraphGroup.add(paragraph);
@@ -29,8 +27,7 @@ class TextToSpeechUtils {
         final sentenceGroup = List<String>.empty(growable: true);
         final sentences = paragraph.split('.');
         for (final sentence in sentences) {
-          if (sentence.trim().isNotEmpty &&
-              sentence.length <= maxLength) {
+          if (sentence.trim().isNotEmpty && sentence.length <= maxLength) {
             if ((sentenceGroup.join('. ').length + sentence.length) <=
                 maxLength) {
               sentenceGroup.add(sentence);

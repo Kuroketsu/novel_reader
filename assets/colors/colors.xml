@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Color Pallet: https://colorhunt.co/palette/04009a77acf13edbf0c0fefc-->
-    <color name="primaryColor">#77ACF1</color>
-    <color name="primaryColorDark">#04009A</color>
-    <color name="accentColor">#3EDBF0</color>
-    <color name="accentColorDark">#C0FEFC</color>
+    <color name="primaryColor">#1C4D8D</color>
+    <color name="primaryColorDark">#0F2854</color>
+    <color name="accentColor">#BDE8F5</color>
+    <color name="accentColorDark">#4988C4</color>
 </resources>

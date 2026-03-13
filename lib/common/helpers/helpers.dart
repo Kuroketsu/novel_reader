@@ -66,12 +66,14 @@ class Helpers {
                         ),
                       ),
                       Visibility(
-                        visible: negativeButtonText != null ||
+                        visible:
+                            negativeButtonText != null ||
                             positiveButtonText != null,
                         child: SizedBox(height: contentButtonSpacing),
                       ),
                       Row(
-                        mainAxisAlignment: negativeButtonText != null &&
+                        mainAxisAlignment:
+                            negativeButtonText != null &&
                                 positiveButtonText != null
                             ? MainAxisAlignment.spaceBetween
                             : MainAxisAlignment.end,
@@ -165,12 +167,14 @@ class Helpers {
                       const SizedBox(height: 10),
                       content,
                       Visibility(
-                        visible: negativeButtonText != null ||
+                        visible:
+                            negativeButtonText != null ||
                             positiveButtonText != null,
                         child: SizedBox(height: contentButtonSpacing),
                       ),
                       Row(
-                        mainAxisAlignment: negativeButtonText != null &&
+                        mainAxisAlignment:
+                            negativeButtonText != null &&
                                 positiveButtonText != null
                             ? MainAxisAlignment.spaceBetween
                             : MainAxisAlignment.end,

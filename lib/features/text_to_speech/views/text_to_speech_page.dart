@@ -65,9 +65,9 @@ class _TextToSpeechViewState extends State<TextToSpeechView> {
   @override
   void initState() {
     textInputController.addListener(() {
-      context
-          .read<TextToSpeechCubit>()
-          .changeInputText(textInputController.text);
+      context.read<TextToSpeechCubit>().changeInputText(
+        textInputController.text,
+      );
     });
     super.initState();
   }
@@ -76,11 +76,12 @@ class _TextToSpeechViewState extends State<TextToSpeechView> {
   Widget build(BuildContext context) {
     return BlocBuilder<TextToSpeechCubit, TextToSpeechState>(
       builder: (context, state) {
+        final theme = Theme.of(context);
         final cubit = context.read<TextToSpeechCubit>();
         return Container(
           width: double.infinity,
           height: double.infinity,
-          color: Theme.of(context).brightness == Brightness.dark
+          color: theme.brightness == Brightness.dark
               ? Colors.black87
               : Colors.white,
           padding: const EdgeInsets.all(16),
@@ -138,7 +139,7 @@ class _TextToSpeechViewState extends State<TextToSpeechView> {
               LinearProgressIndicator(
                 value: state.progress,
                 // value: 0.5,
-                color: Theme.of(context).canvasColor,
+                color: theme.canvasColor,
                 backgroundColor: Colors.transparent,
               ),
               const SizedBox(height: 8),
@@ -146,9 +147,13 @@ class _TextToSpeechViewState extends State<TextToSpeechView> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   ElevatedButton(
-                    onPressed:
-                        state.isPlaying ? null : textInputController.clear,
-                    child: const Icon(Icons.clear),
+                    onPressed: state.isPlaying
+                        ? null
+                        : textInputController.clear,
+                    child: Icon(
+                      Icons.clear,
+                      color: theme.colorScheme.onPrimary,
+                    ),
                   ),
                   ElevatedButton(
                     onPressed: state.isPlaying
@@ -156,9 +161,12 @@ class _TextToSpeechViewState extends State<TextToSpeechView> {
                         : () async {
                             textInputController.text =
                                 textInputController.text +
-                                    await cubit.getClipboardText();
+                                await cubit.getClipboardText();
                           },
-                    child: const Icon(Icons.paste),
+                    child: Icon(
+                      Icons.paste,
+                      color: theme.colorScheme.onPrimary,
+                    ),
                   ),
                   ElevatedButton(
                     onPressed: () {
@@ -168,19 +176,28 @@ class _TextToSpeechViewState extends State<TextToSpeechView> {
                         cubit.play();
                       }
                     },
-                    child:
-                        Icon(state.isPlaying ? Icons.pause : Icons.play_arrow),
+                    child: Icon(
+                      state.isPlaying ? Icons.pause : Icons.play_arrow,
+                      color: theme.colorScheme.onPrimary,
+                    ),
                   ),
                   ElevatedButton(
-                    onPressed:
-                        state.isPlaying || state.isPaused ? cubit.stop : null,
-                    child: const Icon(Icons.stop),
+                    onPressed: state.isPlaying || state.isPaused
+                        ? cubit.stop
+                        : null,
+                    child: Icon(
+                      Icons.stop,
+                      color: theme.colorScheme.onPrimary,
+                    ),
                   ),
                   ElevatedButton(
                     onPressed: state.isPlaying
                         ? null
                         : () => _showSettingsDialog(cubit),
-                    child: const Icon(Icons.settings),
+                    child: Icon(
+                      Icons.settings,
+                      color: theme.colorScheme.onPrimary,
+                    ),
                   ),
                 ],
               ),
@@ -332,8 +349,9 @@ class _TextToSpeechViewState extends State<TextToSpeechView> {
           ),
           Visibility(
             visible: cubit.state.isAndroid,
-            child:
-                Text('Is installed: ${cubit.state.isCurrentLanguageInstalled}'),
+            child: Text(
+              'Is installed: ${cubit.state.isCurrentLanguageInstalled}',
+            ),
           ),
         ],
       ),

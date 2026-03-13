@@ -15,12 +15,12 @@ part 'text_to_speech_state.dart';
 
 class TextToSpeechCubit extends Cubit<TextToSpeechState> {
   TextToSpeechCubit()
-      : flutterTts = FlutterTts(),
-        flowery = const Flowery(
-          userAgent: 'Kuroketsu/Novel Reader/1.0.0',
-        ),
-        // assetsAudioPlayer = AssetsAudioPlayer(),
-        super(const TextToSpeechState()) {
+    : flutterTts = FlutterTts(),
+      flowery = const Flowery(
+        userAgent: 'Kuroketsu/Novel Reader/1.0.0',
+      ),
+      // assetsAudioPlayer = AssetsAudioPlayer(),
+      super(const TextToSpeechState()) {
     initTts();
   }
 
